@@ -1,6 +1,6 @@
 #include <iostream>
 #ifndef CONTEST
-#include "fullratio.hpp"
+#include "fullratio.h"
 #endif
 #include <cmath>
 
@@ -12,7 +12,15 @@ nom=n;
 den=d;
 }
 
-rational operator+(const rational &x,const rational &y)
+int rational::gcd(int a,int b)
+{
+a = abs(a); b = abs(b);
+ while (a > 0 && b > 0)
+ if (a > b) a = a % b; else b = b % a;
+ return(a+b);
+}
+
+rational operator + (const rational &x,const rational &y)
 {
 int r1=(x.nom*y.den)+(y.nom*x.den);
 int r2=x.den*y.den;
@@ -75,13 +83,7 @@ return(rational(r1,r2));
 }
 
 
-int rational::gcd(int a,int b)
-{
-a = abs(a); b = abs(b);
- while (a > 0 && b > 0)
- if (a > b) a = a % b; else b = b % a;
- return(a+b);
-}
+
 
 ostream& operator<<(ostream &out, const rational &r)
 {

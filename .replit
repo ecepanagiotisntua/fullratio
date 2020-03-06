@@ -1,0 +1,2 @@
+language = "cpp"
+run = "g++ -g3 -O0 fullratiotest.cpp -o test.out"
