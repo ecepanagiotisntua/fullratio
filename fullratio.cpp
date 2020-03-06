@@ -1,6 +1,6 @@
 #include <iostream>
 #ifndef CONTEST
-#include "fullratio.h"
+#include "fullratio.hpp"
 #endif
 #include <cmath>
 
@@ -12,7 +12,7 @@ nom=n;
 den=d;
 }
 
-int rational::gcd(int a,int b)
+int gcd(int a,int b)
 {
 a = abs(a); b = abs(b);
  while (a > 0 && b > 0)
